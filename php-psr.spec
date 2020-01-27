@@ -4,7 +4,7 @@
 #
 Name     : php-psr
 Version  : 0.7.0
-Release  : 3
+Release  : 4
 URL      : https://pecl.php.net/get/psr-0.7.0.tgz
 Source0  : https://pecl.php.net/get/psr-0.7.0.tgz
 Summary  : No detailed summary available
@@ -26,7 +26,6 @@ Group: Development
 Requires: php-psr-lib = %{version}-%{release}
 Provides: php-psr-devel = %{version}-%{release}
 Requires: php-psr = %{version}-%{release}
-Requires: php-psr = %{version}-%{release}
 
 %description dev
 dev components for the php-psr package.
@@ -42,6 +41,7 @@ lib components for the php-psr package.
 
 %prep
 %setup -q -n psr-0.7.0
+cd %{_builddir}/psr-0.7.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -75,4 +75,4 @@ make  %{?_smp_mflags}
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/extensions/no-debug-non-zts-20180731/psr.so
+/usr/lib64/extensions/no-debug-non-zts-20190902/psr.so
