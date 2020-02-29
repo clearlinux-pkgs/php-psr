@@ -4,10 +4,10 @@
 #
 Name     : php-psr
 Version  : 1.0.0
-Release  : 5
+Release  : 6
 URL      : https://pecl.php.net/get/psr-1.0.0.tgz
 Source0  : https://pecl.php.net/get/psr-1.0.0.tgz
-Summary  : PHP extension providing the accepted PSR interfaces.
+Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause-FreeBSD
 Requires: php-psr-lib = %{version}-%{release}
@@ -25,7 +25,6 @@ Summary: dev components for the php-psr package.
 Group: Development
 Requires: php-psr-lib = %{version}-%{release}
 Provides: php-psr-devel = %{version}-%{release}
-Requires: php-psr = %{version}-%{release}
 Requires: php-psr = %{version}-%{release}
 
 %description dev
