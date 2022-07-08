@@ -4,7 +4,7 @@
 #
 Name     : php-psr
 Version  : 1.2.0
-Release  : 17
+Release  : 18
 URL      : https://pecl.php.net/get/psr-1.2.0.tgz
 Source0  : https://pecl.php.net/get/psr-1.2.0.tgz
 Summary  : No detailed summary available
