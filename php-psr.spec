@@ -4,13 +4,14 @@
 #
 Name     : php-psr
 Version  : 1.2.0
-Release  : 32
+Release  : 33
 URL      : https://pecl.php.net/get/psr-1.2.0.tgz
 Source0  : https://pecl.php.net/get/psr-1.2.0.tgz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause-FreeBSD
 Requires: php-psr-lib = %{version}-%{release}
+Requires: php-psr-license = %{version}-%{release}
 BuildRequires : buildreq-php
 
 %description
@@ -37,9 +38,18 @@ dev components for the php-psr package.
 %package lib
 Summary: lib components for the php-psr package.
 Group: Libraries
+Requires: php-psr-license = %{version}-%{release}
 
 %description lib
 lib components for the php-psr package.
+
+
+%package license
+Summary: license components for the php-psr package.
+Group: Default
+
+%description license
+license components for the php-psr package.
 
 
 %prep
@@ -55,6 +65,8 @@ phpize
 make  %{?_smp_mflags}
 
 %install
+mkdir -p %{buildroot}/usr/share/package-licenses/php-psr
+cp %{_builddir}/psr-%{version}/LICENSE.md %{buildroot}/usr/share/package-licenses/php-psr/488529a5b37b65043cc2cf4bf9446faa78d1768c
 %make_install
 
 
@@ -78,4 +90,8 @@ make  %{?_smp_mflags}
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/extensions/no-debug-non-zts-20210902/psr.so
+/usr/lib64/extensions/no-debug-non-zts-20220829/psr.so
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/php-psr/488529a5b37b65043cc2cf4bf9446faa78d1768c
